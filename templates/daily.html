@@ -1,0 +1,21 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Daily{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary btn-xs" type="submit" value="Submit">
+        <a href="{% url 'home' %}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Go back</a>
+    </form>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Login</a>
+  <a href="{% url 'home' %}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Go back</a>
+{% endif %}
+{% endblock %}

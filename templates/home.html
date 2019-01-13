@@ -1,0 +1,39 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<div>
+  <h2>Hello {{ user.username }}</h2>
+  
+  <p></p>
+</div>
+<div>
+    <h3>--------------------------------------------------</h3>
+  <h3>Logging</h3>
+  <a href="{% url 'daily' %}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Daily</a>
+  <a href="{% url 'weekly' %}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Weekly</a>
+  <p></p>
+</div>
+<div>
+    <h3>--------------------------------------------------</h3>
+  <h3>Analyze</h3>
+  <a href="{% url 'daily' %}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Results</a>
+  <p></p>
+</div>
+<div>
+  <h3>--------------------------------------------------</h3>
+    <a href="{% url 'logout' %}" class="btn btn-secondary btn-xs active" role="button" aria-pressed="true">Logout</a>
+    <a href="{% url 'password_reset' %}" class="btn btn-secondary btn-xs active" role="button" aria-pressed="true">Reset
+      password</a>
+      <p></p>
+      <h3>--------------------------------------------------</h3>
+</div>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Login</a>
+<a href="{% url 'signup' %}" class="btn btn-primary btn-xs" role="button" aria-pressed="true">Sign up</a>
+{% endif %}
+{% endblock %}
