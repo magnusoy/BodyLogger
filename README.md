@@ -1,2 +1,2 @@
 # BodyLogger
-Django application for fast logging and analyst.
+Django application for fast logging and analysis.
