@@ -3,16 +3,16 @@ import datetime
 
 class DailyForm(forms.Form):
     date = forms.DateField(initial=datetime.date.today)
-    weight = forms.IntegerField(required=True)
+    weight = forms.FloatField(required=True)
 
 class WeeklyForm(forms.Form):
     date = forms.DateField(initial=datetime.date.today)
-    weight = forms.IntegerField(required=True)
-    shoulders = forms.IntegerField(required=True)
-    chest = forms.IntegerField(required=True)
-    arms = forms.IntegerField(required=True)
-    forearms = forms.IntegerField(required=True)
-    waist = forms.IntegerField(required=True)
-    hips = forms.IntegerField(required=True)
-    legs = forms.IntegerField(required=True)
-    calfs = forms.IntegerField(required=True)
+    weight = forms.FloatField(required=True)
+    shoulders = forms.FloatField(required=True)
+    chest = forms.FloatField(required=True)
+    arms = forms.FloatField(required=True)
+    forearms = forms.FloatField(required=True)
+    waist = forms.FloatField(required=True)
+    hips = forms.FloatField(required=True)
+    legs = forms.FloatField(required=True)
+    calfs = forms.FloatField(required=True)
